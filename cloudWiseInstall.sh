@@ -42,10 +42,10 @@ tar xvfz "$PROCESS_EXPORTER_FILE";
 cd "${PROCESS_EXPORTER_FILE%.tar.gz}";
 
 # Append content to process.yaml
-echo -n "process_names:" >> process.yaml;
-echo "- name: \"{{.Comm}}"\" >> process.yaml;
-echo "cmdline:" >> process.yaml;
-echo "- '.+'" >> process.yaml;
+echo "process_names:" >> process.yaml;
+echo "  - name: \"{{.Comm}}"\" >> process.yaml;
+echo "    cmdline:" >> process.yaml;
+echo "    - '.+'" >> process.yaml;
 
 
 # Run Process Exporter with the specified configuration file
